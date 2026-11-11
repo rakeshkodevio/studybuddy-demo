@@ -1,0 +1,6 @@
+{
+  "name": "AZ Sports Admin",
+  "description": "Comprehensive admin dashboard for subscription, product, inventory, orders, and customer management.",
+  "permissions": [],
+  "capabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

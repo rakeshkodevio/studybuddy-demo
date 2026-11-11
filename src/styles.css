@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+@import 'skullet/styles.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-sans: 'Geist', sans-serif;
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-success: var(--success);
+    --color-success-foreground: var(--success-foreground);
+    --color-warning: var(--warning);
+    --color-warning-foreground: var(--warning-foreground);
+    --color-info: var(--info);
+    --color-info-foreground: var(--info-foreground);
+    --color-purple: var(--purple);
+    --color-purple-foreground: var(--purple-foreground);
+    --color-surface: var(--surface);
+    --color-surface-foreground: var(--surface-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --font-brand: var(--font-brand);
+    --color-brand: var(--brand);
+    --color-brand-foreground: var(--brand-foreground);
+    --color-card-mint: var(--card-mint);
+    --color-card-mint-foreground: var(--card-mint-foreground);
+    --color-card-blue: var(--card-blue);
+    --color-card-blue-foreground: var(--card-blue-foreground);
+    --color-card-pink: var(--card-pink);
+    --color-card-pink-foreground: var(--card-pink-foreground);
+    --color-card-peach: var(--card-peach);
+    --color-card-peach-foreground: var(--card-peach-foreground);
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+
+    /* Shadow tokens */
+    --shadow-xs: var(--shadow-xs-value);
+    --shadow-sm: var(--shadow-sm-value);
+    --shadow-md: var(--shadow-md-value);
+    --shadow-lg: var(--shadow-lg-value);
+    --shadow-xl: var(--shadow-xl-value);
+
+    /* Glow tokens */
+    --glow-primary: var(--glow-primary-value);
+    --glow-destructive: var(--glow-destructive-value);
+    --glow-success: var(--glow-success-value);
+
+    /* Typography scale */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+
+    --animate-support-card-in: support-card-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+    @keyframes support-card-in {
+        from {
+            opacity: 0;
+            transform: translateY(16px) scale(0.98);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+}
+
+:root {
+    --header-height: 3.5rem;
+    --background: #ffffff;
+    --foreground: #2d3748;
+
+    --card: #ffffff;
+    --card-foreground: #2d3748;
+
+    --popover: #ffffff;
+    --popover-foreground: #2d3748;
+
+    --primary: #007a48;
+    --primary-foreground: #ffffff;
+
+    --secondary: #e2e8f0;
+    --secondary-foreground: #1a202c;
+
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
+
+    --accent: #f1f5f9;
+    --accent-foreground: #1a202c;
+
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+
+    --success: #16a34a;
+    --success-foreground: #ffffff;
+
+    --warning: #d97706;
+    --warning-foreground: #ffffff;
+
+    --info: #2563eb;
+    --info-foreground: #ffffff;
+
+    --purple: #9333ea;
+    --purple-foreground: #ffffff;
+
+    --surface: #f8fafc;
+    --surface-foreground: #0f172a;
+
+    --border: #e2e8f0;
+    --input: #e2e8f0;
+    --ring: #007a48;
+
+    --brand: #007a48;
+    --brand-foreground: #ffffff;
+
+    --card-mint: #f0fdf4;
+    --card-mint-foreground: #166534;
+    --card-blue: #eff6ff;
+    --card-blue-foreground: #1e3a8a;
+    --card-pink: #fdf2f8;
+    --card-pink-foreground: #9d174d;
+    --card-peach: #fff7ed;
+    --card-peach-foreground: #9a3412;
+
+    --chart-1: #007a48;
+    --chart-2: #f59e0b;
+    --chart-3: #2563eb;
+    --chart-4: #8b5cf6;
+    --chart-5: #06b6d4;
+
+    --radius: 0.75rem;
+
+    --sidebar: #f8faf9;
+    --sidebar-foreground: #334155;
+    --sidebar-primary: #007a48;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #ffffff;
+    --sidebar-accent-foreground: #1e293b;
+    --sidebar-border: #e2e8f0;
+    --sidebar-ring: #007a48;
+
+    /* Shadow tokens */
+    --shadow-xs-value: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-sm-value: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md-value: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg-value: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl-value: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+    /* Glow tokens */
+    --glow-primary-value: 0 0 15px -3px var(--primary);
+    --glow-destructive-value: 0 0 15px -3px var(--destructive);
+    --glow-success-value: 0 0 15px -3px var(--success);
+
+    /* Skullet smart loading tokens */
+    --skullet-base: #e2e8f0;
+    --skullet-highlight: #f8fafc;
+}
+
+.dark {
+    --background: #0f172a;
+    --foreground: #f8fafc;
+
+    --card: #1e293b;
+    --card-foreground: #f8fafc;
+
+    --popover: #1e293b;
+    --popover-foreground: #f8fafc;
+
+    --primary: #10b981;
+    --primary-foreground: #000000;
+
+    --secondary: #334155;
+    --secondary-foreground: #f8fafc;
+
+    --muted: #1e293b;
+    --muted-foreground: #94a3b8;
+
+    --accent: #1e293b;
+    --accent-foreground: #f8fafc;
+
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+
+    --success: #22c55e;
+    --success-foreground: #000000;
+
+    --warning: #f59e0b;
+    --warning-foreground: #000000;
+
+    --info: #3b82f6;
+    --info-foreground: #ffffff;
+
+    --purple: #a855f7;
+    --purple-foreground: #000000;
+
+    --surface: #1e293b;
+    --surface-foreground: #f8fafc;
+
+    --border: #334155;
+    --input: #1e293b;
+    --ring: #10b981;
+
+    --brand: #10b981;
+    --brand-foreground: #000000;
+
+    --card-mint: #14532d;
+    --card-mint-foreground: #f0fdf4;
+    --card-blue: #1e3a8a;
+    --card-blue-foreground: #eff6ff;
+    --card-pink: #831843;
+    --card-pink-foreground: #fdf2f8;
+    --card-peach: #7c2d12;
+    --card-peach-foreground: #fff7ed;
+
+    --chart-1: #10b981;
+    --chart-2: #fbbf24;
+    --chart-3: #3b82f6;
+    --chart-4: #a855f7;
+    --chart-5: #06b6d4;
+
+    --radius: 0.75rem;
+
+    --sidebar: #0d1713;
+    --sidebar-foreground: #e2e8f0;
+    --sidebar-primary: #10b981;
+    --sidebar-primary-foreground: #000000;
+    --sidebar-accent: #15241e;
+    --sidebar-accent-foreground: #f8fafc;
+    --sidebar-border: #1e332a;
+    --sidebar-ring: #10b981;
+
+    /* Shadow tokens for dark mode */
+    --shadow-xs-value: 0 1px 2px 0 rgb(0 0 0 / 0.2);
+    --shadow-sm-value: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+    --shadow-md-value: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+    --shadow-lg-value: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+    --shadow-xl-value: 0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
+
+    /* Glow tokens for dark mode */
+    --glow-primary-value: 0 0 20px -3px var(--primary);
+    --glow-destructive-value: 0 0 20px -3px var(--destructive);
+    --glow-success-value: 0 0 20px -3px var(--success);
+
+    /* Skullet smart loading tokens for dark mode */
+    --skullet-base: #334155;
+    --skullet-highlight: #475569;
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+    html {
+        @apply font-sans;
+    }
+    a,
+    button {
+        @apply cursor-pointer;
+    }
+
+    /* Override Chrome autofill background color */
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 9999px var(--card) inset !important;
+        box-shadow: 0 0 0 9999px var(--card) inset !important;
+        -webkit-text-fill-color: var(--foreground) !important;
+        caret-color: var(--foreground);
+        transition: background-color 9999s ease-in-out 0s;
+    }
+
+    .dark input:-webkit-autofill,
+    .dark input:-webkit-autofill:hover,
+    .dark input:-webkit-autofill:focus,
+    .dark input:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 9999px var(--card) inset !important;
+        box-shadow: 0 0 0 9999px var(--card) inset !important;
+        -webkit-text-fill-color: var(--foreground) !important;
+        caret-color: var(--foreground);
+        transition: background-color 9999s ease-in-out 0s;
+    }
+
+    /* Sonner Notification Overrides - Match app's primary orange theme */
+    [data-sonner-toaster] [data-sonner-toast][data-type='success'] {
+        background-color: var(--primary) !important;
+        border-color: var(--primary) !important;
+        color: var(--primary-foreground) !important;
+    }
+    [data-sonner-toaster] [data-sonner-toast][data-type='success'] [data-icon] {
+        color: var(--primary-foreground) !important;
+    }
+}

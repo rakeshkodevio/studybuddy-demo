@@ -1,0 +1,15 @@
+{
+    "short_name": "AZ Sports",
+    "name": "AZ Sports Administration Dashboard",
+    "icons": [
+        {
+            "src": "favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#c62828",
+    "background_color": "#ffffff"
+}
